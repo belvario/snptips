@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://snptips/skin/snptips.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://snptips/locale/snptips.dtd">
+
+<dialog id="optiondialog" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&snptips.options.label;"
+        buttons="cancel,accept"
+        onload="snptips.onLoadPreferences();"
+        ondialogaccept="return snptips.onSavePreferences();">
+    <dialogheader title="&snptips.name; &snptips.version;" align="center"/>
+    <script type="application/x-javascript" src="chrome://snptips/content/snptips.js"/>
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="snptips_properties" src="chrome://snptips/locale/snptips.properties" />
+    </stringbundleset>
+
+    <tabbox id="snptipsTabbox">
+        <tabs>
+            <tab label="&snptips.options.tab.options;" />
+            <tab label="&snptips.options.tab.about;" />
+        </tabs>
+        <tabpanels>
+            <tabpanel align="center" orient="vertical">
+                <hbox align="center">
+                    <vbox align="left" >
+                        <checkbox id="snptipsEnabled" label="&snptips.options.tab.enableSnpTips;"
+                            tooltiptext="&snptips.options.tab.enableDisableSnpTips;"  />
+                        <separator class="thin"/>
+                        <hbox align="center">
+                            <label control="symbol" value="&snptips.options.tab.dataFile;" tooltiptext="&snptips.options.tab.selectDataFile;"/>
+                            <textbox id="snptipsDataFile" maxlength="200" width="500" />
+                            <button label="&snptips.options.tab.btnBrowse;" oncommand="onFileOpen()" />
+                        </hbox>
+                    </vbox>
+                </hbox>
+            </tabpanel>
+            <tabpanel align="center" orient="vertical">
+                <hbox align="center">
+                    <image src="chrome://snptips/skin/snptips.png"/>
+                    <vbox align="center" >
+                        <text value="SNPTips" style="font-weight: bold; font-size: x-large;"/>
+                        <text value="version 1.0"/>
+                        <separator class="thin"/>
+                        <text value="Created By:" style="font-weight: bold;"/>
+                        <label id="homepage" class="link" onclick="window.open('&snptips.homepage;'); return true;">&snptips.homepage;</label>
+                    </vbox>
+                </hbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</dialog>

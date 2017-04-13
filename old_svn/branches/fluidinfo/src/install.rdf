@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+// SNPTips(tm) by 5AM Solutions, Inc.
+//
+// This work is licensed under the Creative Commons
+// Attribution-ShareAlike 3.0 Unported License. To view a copy of
+// this license, visit http://creativecommons.org/licenses/by-sa/3.0/
+// or send a letter to Creative Commons, 171 Second Street, Suite 300,
+// San Francisco, California, 94105, USA.
+// See LICENSE.txt for more information.
+-->
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>snptips@5amsolutions.com</em:id>
+    <em:type>2</em:type>
+    <em:name>SNPTips</em:name>
+    <em:version>@snptips-version@</em:version>
+    <em:creator>5AM Solutions Inc.</em:creator>
+    <em:contributor>Andy Evans</em:contributor>
+    <em:contributor>Will FitzHugh</em:contributor>
+    <em:contributor>Matt Rehfuss</em:contributor>
+    <em:contributor>Krishna Kanchinadam</em:contributor>
+    <em:contributor>Cristian Goina</em:contributor>
+    <em:description>SNPTips allows customers of popular personal genomics services to access their SNP genotype information without leaving the web page they are reading.</em:description>
+    <em:aboutURL>chrome://snptips/content/about.xul</em:aboutURL>
+    <em:optionsURL>chrome://snptips/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://snptips/skin/snptips.png</em:iconURL>
+    <em:homepageURL>http://www.snptips.com/</em:homepageURL>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>3.5</em:minVersion>
+        <em:maxVersion>4.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

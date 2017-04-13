@@ -1,0 +1,59 @@
+/* SNPTips(tm) by 5AM Solutions, Inc. - www.5amsolutions.com
+
+// This work is licensed under the Creative Commons
+// Attribution-ShareAlike 3.0 Unported License. To view a copy of
+// this license, visit http://creativecommons.org/licenses/by-sa/3.0/
+// or send a letter to Creative Commons, 171 Second Street, Suite 300,
+// San Francisco, California, 94105, USA.
+// See LICENSE.txt for more information.
+*/
+
+span.snptipPresent
+{ display:-moz-inline-box !important; display:inline-block !important; background:#d3e289 !important; padding:0 3px !important; color:#333 !important; border:1px solid #7aa344 !important; -moz-border-radius:5px !important; -webkit-border-radius:5px !important; border-radius:5px !important; white-space:nowrap !important;}
+span.snptipNotPresent
+{ display:-moz-inline-box !important; display:inline-block !important; background:#e6e6e6 !important; padding:0 3px !important; color:#333 !important; border:1px solid #999 !important; -moz-border-radius:5px !important; -webkit-border-radius:5px !important; border-radius:5px !important; white-space:nowrap !important;}
+
+span.snptipPresent>a
+{ text-decoration:underline !important; color:#333 !important; }
+span.snptipNotPresent>a
+{ text-decoration:underline !important; color:#333 !important; }
+
+a.snptip_icon>img
+{ display: inline-block; vertical-align:middle !important; margin-bottom:.25em !important; border:0 !important}
+
+.snptip
+{ text-align:left !important; font-weight:normal !important; line-height:1.5em !important; }
+.snptip_h1
+{ font-family:'Helvetica Neue', Helvetica, Arial !important; font-size:12pt !important; display:block !important; border-bottom:1px solid #ccc !important; padding:10px 20px 15px 0 !important; text-align:left !important; font-weight:normal !important; }
+.snptip_p
+{ font-family:'Helvetica Neue', Helvetica, Arial !important; font-size:9pt !important; line-height:1.5em !important; padding:15px 20px 15px 0 !important; background:url("chrome://snptips/skin/powered_by_5am.png") no-repeat right bottom !important; text-align:left !important; font-weight:normal !important; }
+.snptip_p a
+{ color:#069 !important; background:url("chrome://snptips/skin/ico_ext.gif") no-repeat right !important; padding-right:16px !important; font-size:9pt !important; text-decoration:none !important; padding-top:1px !important; font-weight:normal !important; }
+
+
+.about_dialog_wrapper
+{ background:#e5e5e5; padding:18px !important; background:#e5e5e5 url("chrome://snptips/skin/bg_about.png") no-repeat !important; }
+.about_dialog
+{ color:#656565 !important; font-size:95%; margin:0 !important; padding:0 !important; font-family:'Lucida Grande','Lucida Sans Unicode', verdana, arial !important; }
+.about_dialog .logo_snptips
+{ padding:20px 0 !important;}
+.about_dialog .snptips_version
+{ margin:0 0 20px 0 !important; background:#838383; padding:8px; color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+.about_dialog .about_vbox
+{ margin:0 !important; }
+.about_dialog hbox vbox.col1
+{ padding-left:8px !important; padding-right:10px !important; width:160px !important; }
+.about_dialog hbox vbox.col1
+{ padding-left:8px; padding-right:10px !important; width:170px !important; }
+.about_dialog hbox vbox label
+{ font-weight:bold !important; }
+.about_dialog hbox vbox description
+{ padding-bottom:5px !important; }
+.about_dialog hbox vbox description.link
+{ cursor:pointer !important; padding-bottom:20px !important; color:#069 !important;}
+.about_dialog hbox vbox description.link:hover
+{ text-decoration:underline !important }
+.about_dialog_wrapper .copyright
+{ padding-top:30px !important; padding-bottom:0px !important; margin-left:8px !important; color:#999 !important; font-size:90% !important; }
+.btn_close
+{ padding:15px }

@@ -1,0 +1,20 @@
+/* SNPTips by 5AM Solutions - www.5amsolutions.com */
+
+span.snptipPresent 
+{ display:-moz-inline-box !important; display:inline-block !important; background:#dbefd9 url("../images/skin/snp_present.png") no-repeat right !important; padding-right:16px !important; padding-left:1px !important; color:#333 !important; border:1px dotted #348544 !important; -moz-border-radius:3px !important; -webkit-border-radius:3px !important; border-radius:3px !important; }
+span.snptipNotPresent
+{ display:-moz-inline-box !important; display:inline-block !important; background:#e6e6e6 url("../images/skin/snp_not_present.png") no-repeat right !important; padding-right:16px !important; padding-left:1px !important; color:#333 !important; border:1px dotted #999 !important; -moz-border-radius:3px !important; -webkit-border-radius:3px !important; border-radius:3px !important; }
+
+a>span.snptipPresent 
+{ text-decoration:underline !important; }
+a>span.snptipNotPresent 
+{ text-decoration:underline !important; }
+
+.snptip
+{ text-align:left !important; font-weight:normal !important; line-height:1.5em !important; }
+.snptip_h1
+{ font-family:'Helvetica Neue', Helvetica, Arial !important; font-size:12pt !important; display:block !important; border-bottom:1px solid #ccc !important; padding:10px 20px 15px 0 !important; text-align:left !important; font-weight:normal !important; }
+.snptip_p
+{ font-family:'Helvetica Neue', Helvetica, Arial !important; font-size:9pt !important; line-height:1.5em !important; padding:15px 20px 15px 0 !important; background:url("../images/skin/powered_by_5am.png") no-repeat right bottom !important; text-align:left !important; font-weight:normal !important; }
+.snptip_p a
+{ color:#069 !important; background:url("../images/skin/ico_ext.gif") no-repeat right !important; padding-right:16px !important; font-size:9pt !important; text-decoration:none !important; padding-top:1px !important; font-weight:normal !important; }

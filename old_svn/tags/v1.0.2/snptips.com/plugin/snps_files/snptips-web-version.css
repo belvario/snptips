@@ -1,0 +1,23 @@
+/* SNPTips by 5AM Solutions - www.5amsolutions.com */
+
+span.snptipPresent2
+{ display:-moz-inline-box !important; display:inline-block !important; background:#d3e289 !important; padding:0 3px !important; color:#333 !important; border:1px solid #7aa344 !important; -moz-border-radius:5px !important; -webkit-border-radius:5px !important; border-radius:5px !important; white-space:nowrap !important;}
+span.snptipNotPresent2
+{ display:-moz-inline-box !important; display:inline-block !important; background:#e6e6e6 !important; padding:0 3px !important; color:#333 !important; border:1px solid #999 !important; -moz-border-radius:5px !important; -webkit-border-radius:5px !important; border-radius:5px !important; white-space:nowrap !important; }
+
+span.snptipPresent2 span>a
+{ text-decoration:underline !important; color:#333 !important; }
+span.snptipNotPresent2 span>a
+{ text-decoration:underline !important; color:#333 !important; }
+
+a.snptip_icon>IMG
+{ vertical-align:middle !important; margin-bottom:.25em !important; border:0 !important}
+
+.snptip
+{ text-align:left !important; font-weight:normal !important; line-height:1.5em !important; }
+.snptip_h1
+{ font-family:'Helvetica Neue', Helvetica, Arial !important; font-size:12pt !important; display:block !important; border-bottom:1px solid #ccc !important; padding:10px 20px 15px 0 !important; text-align:left !important; font-weight:normal !important; }
+.snptip_p
+{ font-family:'Helvetica Neue', Helvetica, Arial !important; font-size:9pt !important; line-height:1.5em !important; padding:15px 20px 15px 0 !important; background:url("../images/skin/powered_by_5am.png") no-repeat right bottom !important; text-align:left !important; font-weight:normal !important; }
+.snptip_p a
+{ color:#069 !important; background:url("../images/skin/ico_ext.gif") no-repeat right !important; padding-right:16px !important; font-size:9pt !important; text-decoration:none !important; padding-top:1px !important; font-weight:normal !important; }

@@ -1,0 +1,151 @@
+<!--
+ **********************************************************************
+Project: SNPTIPS
+Purpose: Provide tasks to package the SNPTips addon.
+Author: Krishna M. Kanchinadam (kkanchinadam@5amsolutions.com)
+Date: 10/05/2010
+Required Properties:
+        snptips.binary.name - Name of the addon.
+        snptips.binary.version - Version.
+ **********************************************************************
+-->
+
+<project name="snptips" default="echo_settings" basedir=".">
+    <description>Defines tasks to package the addon.</description>
+    <!-- ***************************************************************** -->
+    <!-- ** PROPERTIES                                                  ** -->
+    <!-- ***************************************************************** -->
+    <property file="${basedir}/build.${user.name}.properties"/>
+    <property file="${basedir}/build.local.properties"/>
+    <property file="${basedir}/build.properties"/>
+
+    <property name="src.dir" value="${basedir}/src"/>
+    <property name="tools.dir" value="${basedir}/tools"/>
+    <property name="xpibin.dirname" value="xpi_bin"/>
+    <property name="binary.dist.dir" value="${basedir}/${xpibin.dirname}"/>
+    
+    <property name="snptips.binary.name" value="SNPTips"/> 
+    <property name="snptips.binary.version" value="1.1"/>
+
+    <property name="snptips.svnrepository.url" value="https://svn.5amsolutions.com/opensource/snptips"/>
+    <property name="xpi.bin.commitmessage" value="Putting ${snptips.binary.fullname} into the binary release directory"/>
+    <property name="snptips.tagging.commitmessage" value="Creating tag v${snptips.binary.version}"/>
+    
+    <property name="snptips.firefox.extension.id" value="snptips@5amsolutions.com" />
+    <property name="snptips.firefox.extension.xpi.name" value="${snptips.firefox.extension.id}.xpi" />
+
+    <property name="snptips.binary.fullname" value="${snptips.binary.name}-v${snptips.binary.version}.xpi" />
+    <property name="output.dir" value="${basedir}/output/v${snptips.binary.version}"/>
+    <property name="output.exploded.dir" value="${output.dir}/${snptips.firefox.extension.id}"/>
+    <property name="snptips.binary.path" value="${output.dir}/${snptips.binary.fullname}"/>
+    <property name="firefox.extensions.path.local" value="${firefox.extensions.dir}"/>
+    
+
+    <path id= "svnant.classpath" >
+        <fileset dir= "${tools.dir}/svnant-1.3.1" >
+            <include name= "*.jar" />
+        </fileset>
+    </path>
+
+    <typedef resource="org/tigris/subversion/svnant/svnantlib.xml"
+             classpathref="svnant.classpath" />
+    
+    <!-- ***************************************************************** -->
+    <!-- ** BUILD TARGETS                                               ** -->
+    <!-- ***************************************************************** -->
+    <target name="echo-settings">
+        <echo message="Properties/Variable values set are...."/>
+        <echo message="snptips.svnrepository.url = ${snptips.svnrepository.url}"/>
+        <echo message="basedir = ${basedir}"/>
+        <echo message="src.dir = ${src.dir}"/>
+        <echo message="snptips.binary.name = ${snptips.binary.name}" />
+        <echo message="snptips.binary.version = ${snptips.binary.version}" />
+        <echo message="snptips.binary.fullname = ${snptips.binary.fullname}" />
+        <echo message="output.dir = ${output.dir}" />
+        <echo message="output.exploded.dir = ${output.exploded.dir}" />
+        <echo message="snptips.binary.path = ${snptips.binary.path}" />
+        <echo message="firefox.extensions.path.local = ${firefox.extensions.path.local}" />
+        <echo message="snptips.firefox.extension.id = ${snptips.firefox.extension.id}" />
+        <echo message="snptips.firefox.extension.xpi.name = ${snptips.firefox.extension.xpi.name}" />
+    </target>
+    
+    <target name="clean">
+        <delete dir="${output.dir}"/>
+    </target>
+
+    <target name="package" depends="clean">
+        <!-- 
+             copy source files to a working directory 
+             in order to replace the filter tokens
+        -->
+        <mkdir dir="${output.dir}/workingdir"/>
+        <copy toDir="${output.dir}/workingdir">
+            <fileset dir="${src.dir}">
+                <include name="install.rdf"/>
+                <include name="chrome.manifest"/>
+                <include name="LICENSE.txt"/>
+                <include name="releasenotes.txt"/>
+            </fileset>
+            <fileset dir="${src.dir}">
+                <include name="chrome/**"/>
+                <include name="defaults/**"/>
+            </fileset>
+            <filterset>
+                <filter token="snptips-version" value="${snptips.binary.version}"/>
+                <filter token="snptips-id" value="${snptips.firefox.extension.id}"/>
+            </filterset>
+        </copy>
+        <!-- create the zip from the working directory -->
+        <zip destfile="${snptips.binary.path}">
+            <fileset dir="${output.dir}/workingdir">
+                <include name="install.rdf"/>
+                <include name="chrome.manifest"/>
+                <include name="LICENSE.txt"/>
+                <include name="releasenotes.txt"/>
+            </fileset>
+            <zipfileset dir="${output.dir}/workingdir/chrome" prefix="chrome"/>
+            <zipfileset dir="${output.dir}/workingdir/defaults" prefix="defaults"/>
+        </zip>
+        <unzip src="${snptips.binary.path}" dest="${output.exploded.dir}"/>
+    </target>
+
+    <target name="deploy" depends="package">
+        <echo message="Copying '${snptips.binary.path}' to '${firefox.extensions.path.local}/${snptips.firefox.extension.xpi.name}'"/>
+        <copy file="${snptips.binary.path}" tofile="${firefox.extensions.path.local}/${snptips.firefox.extension.xpi.name}" overwrite="true"  />
+    </target>
+    
+    <target name="undeploy">
+        <echo message="Undeploying SNPTips - Deleting '${firefox.extensions.path.local}/${snptips.firefox.extension.xpi.name}'" />
+        <delete file="${firefox.extensions.path.local}/${snptips.firefox.extension.xpi.name}" />
+    </target>
+
+    <target name="release" depends="package">
+        <!-- copy the binary -->
+        <copy file="${snptips.binary.path}"
+              todir="${binary.dist.dir}"
+              overwrite="true" />
+        <!-- add the binary to the trunk -->
+        <svn javahl="false"
+             svnkit="false"
+             failonerror="false">
+            <add file="${binary.dist.dir}/${snptips.binary.fullname}"/>
+        <propset name="svn:mime-type" 
+             value="application/x-xpinstall"
+             path="${binary.dist.dir}/${snptips.binary.fullname}"/>
+            <commit file="${binary.dist.dir}/${snptips.binary.fullname}"
+                    message="${xpi.bin.commitmessage}"/>
+        </svn>
+
+        <!-- create a tag -->
+        <echo message="Creating tag ${snptips.svnrepository.url}/tags/v${snptips.binary.version}"/>
+        <svn javahl="false"
+             svnkit="false"
+             failonerror="true">
+            <copy srcUrl="${snptips.svnrepository.url}/trunk"
+                  destUrl="${snptips.svnrepository.url}/tags/v${snptips.binary.version}"
+                  message="${snptips.tagging.commitmessage}"/>
+        </svn>
+        
+    </target>
+    
+</project>

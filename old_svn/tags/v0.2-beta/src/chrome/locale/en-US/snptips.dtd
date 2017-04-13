@@ -1,0 +1,49 @@
+<!--
+// SNPTips(tm) by 5AM Solutions, Inc.
+//
+// This work is licensed under the Creative Commons
+// Attribution-ShareAlike 3.0 Unported License. To view a copy of
+// this license, visit http://creativecommons.org/licenses/by-sa/3.0/
+// or send a letter to Creative Commons, 171 Second Street, Suite 300,
+// San Francisco, California, 94105, USA.
+// See LICENSE.txt for more information.
+-->
+
+<!ENTITY snptips.about "About SNPTips v0.2-beta">
+<!ENTITY snptips.name "SNPTips">
+<!ENTITY snptips.version "v0.2-beta">
+
+<!ENTITY snptips.website.label "SNPTips Website">
+<!ENTITY snptips.website.value "www.snptips.com">
+<!ENTITY snptips.concept.label "Concept">
+<!ENTITY snptips.concept.value "Andrew Evans">
+<!ENTITY snptips.programming.label "Programming">
+<!ENTITY snptips.programming.value "Krishna Kanchinadam">
+<!ENTITY snptips.createdBy.label "Created by 5AM Solutions Inc.">
+<!ENTITY snptips.5amsolutions.website "www.5amsolutions.com">
+<!ENTITY snptips.design.label "Design">
+<!ENTITY snptips.design.value "Matt Rehfuss">
+<!ENTITY snptips.wisdom.label "Wisdom and Guidance">
+<!ENTITY snptips.wisdom.value "Will FitzHugh">
+
+<!ENTITY snptips.preferences.label "Preferences">
+
+<!ENTITY snptips.copyright.value "© 2010 5AM Solutions, Inc. All Rights Reserved.">
+
+<!ENTITY snptips.statusBar.tooltip "SNPTips by 5AM Solutions Inc.">
+<!ENTITY snptips.statusBar.status.enabled "Enabled">
+<!ENTITY snptips.statusBar.status.disabled "Disabled">
+
+<!ENTITY snptips.menu.toggle "Toggle Status">
+<!ENTITY snptips.menu.preferences "Preferences">
+<!ENTITY snptips.menu.website "Homepage">
+<!ENTITY snptips.menu.documentation "Documentation">
+<!ENTITY snptips.menu.issues "Issues">
+<!ENTITY snptips.menu.about "About">
+
+<!ENTITY snptips.options.label "Preferences">
+<!ENTITY snptips.options.enableSnpTips "Enable SNPTips">
+<!ENTITY snptips.options.enableDisableSnpTips "Enable/Disable SNPTips">
+<!ENTITY snptips.options.dataFile "Data File:">
+<!ENTITY snptips.options.selectDataFile "Select a Data File">
+<!ENTITY snptips.options.btnBrowse "Browse...">

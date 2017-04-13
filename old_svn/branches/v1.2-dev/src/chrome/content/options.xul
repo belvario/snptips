@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://snptips/skin/snptips.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://snptips/locale/snptips.dtd">
+<!--
+// SNPTips(tm) by 5AM Solutions, Inc.
+// 
+// This work is licensed under the Creative Commons 
+// Attribution-ShareAlike 3.0 Unported License. To view a copy of 
+// this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+// or send a letter to Creative Commons, 171 Second Street, Suite 300, 
+// San Francisco, California, 94105, USA.
+// See LICENSE.txt for more information.
+-->
+
+<dialog id="optiondialog" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&snptips.name; &snptips.options.label;"
+        buttons="cancel,accept"
+        onload="snptips.onLoadPreferences();"
+        ondialogaccept="return snptips.onSavePreferences();">
+    <script type="application/x-javascript" src="chrome://snptips/content/snptips.js"/>
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="snptips_properties" src="chrome://snptips/locale/snptips.properties" />
+    </stringbundleset>
+    <vbox class="about_dialog">
+        <vbox class="about_vbox">
+            <checkbox id="snptipsEnabled" label="&snptips.options.enableSnpTips;"
+                tooltiptext="&snptips.options.enableDisableSnpTips;"  />
+            <separator class="thin"/>
+            <label control="symbol" value="&snptips.options.dataFile;" tooltiptext="&snptips.options.selectDataFile;"/>
+            <hbox>
+                <textbox id="snptipsDataFile" maxlength="300" width="400" />
+                <button label="&snptips.options.btnBrowse;" oncommand="onFileOpen()" />
+            </hbox>
+        </vbox>
+    </vbox>
+</dialog>

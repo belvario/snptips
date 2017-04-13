@@ -1,0 +1,13 @@
+span.snptipPresent {
+    background:#ffe url("chrome://snptips/skin/snpPresent.png") no-repeat right;
+    padding-right:16px;
+    color:Indigo;
+    display: -moz-inline-box; display: inline-block;
+}
+
+span.snptipNotPresent {
+    background:#ffe url("chrome://snptips/skin/snpNotPresent.png") no-repeat right;
+    padding-right:16px;
+    color:Maroon;
+    display: -moz-inline-box; display: inline-block;
+}

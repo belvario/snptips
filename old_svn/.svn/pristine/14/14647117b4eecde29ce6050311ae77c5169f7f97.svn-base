@@ -1,0 +1,8 @@
+# Default configuration options for the SNPTips project
+# Do Not Modify these properties. If you need to override the values, create a local.properties file
+
+snptips.binary.name=SNPTips
+snptips.binary.version=1.0
+snptips.extension.id=snptips@5amsolutions.com
+firefox.extensions.dir=/Users/Kanchinadam/Library/Application Support/Firefox/Profiles/sk8d33ky.default/extensions
+

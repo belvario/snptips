@@ -1,0 +1,52 @@
+/* SNPTips(tm) by 5AM Solutions, Inc. - www.5amsolutions.com 
+
+// This work is licensed under the Creative Commons 
+// Attribution-ShareAlike 3.0 Unported License. To view a copy of 
+// this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+// or send a letter to Creative Commons, 171 Second Street, Suite 300, 
+// San Francisco, California, 94105, USA.
+// See LICENSE.txt for more information.
+*/
+
+span.snptipPresent
+{ background:#dbefd9 url("chrome://snptips/skin/snp_present.png") no-repeat right; padding-right:16px; padding-left:1px; color:#333; border:1px dotted #348544; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; display: -moz-inline-box; display: inline-block;}
+span.snptipNotPresent
+{ background:#e6e6e6 url("chrome://snptips/skin/snp_not_present.png") no-repeat right; padding-right:16px; padding-left:1px; color:#333; border:1px dotted #999; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; display: -moz-inline-box; display: inline-block;}
+
+a>span.snptipPresent
+{ text-decoration:underline; display: -moz-inline-box; display: inline-block;}
+a>span.snptipNotPresent
+{ text-decoration:underline; display: -moz-inline-box; display: inline-block;}
+
+.snptip_h1
+{ font-family:'Helvetica Neue', Helvetica, Arial; font-size:12pt; display:block; border-bottom:1px solid #ccc; padding:10px 20px 15px 0; }
+.snptip_p
+{ font-family:'Helvetica Neue', Helvetica, Arial; font-size:9pt; line-height:1.5em; padding:15px 20px 15px 0; background:url("chrome://snptips/skin/powered_by_5am.png") no-repeat right bottom;}
+.snptip_p a
+{ color:#069; background:url("chrome://snptips/skin/ico_ext.gif") no-repeat right; padding-right:16px; font-size:9pt; text-decoration:none; padding-top:1px }
+
+
+.about_dialog_wrapper
+{ background:#e5e5e5; padding:18px !important; background:#e5e5e5 url("chrome://snptips/skin/bg_about.png") no-repeat !important; }
+.about_dialog
+{ color:#656565 !important; font-size:95%; margin:0 !important; padding:0 !important; font-family:'Lucida Grande','Lucida Sans Unicode', verdana, arial !important; }
+.about_dialog .logo_snptips
+{ padding:20px 0 !important;}
+.about_dialog .snptips_version
+{ margin:0 0 20px 0 !important; background:#838383; padding:8px; color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+.about_dialog .about_vbox
+{ margin:0 !important; }
+.about_dialog hbox vbox.col1
+{ padding-left:8px !important; padding-right:10px !important; width:160px !important; }
+.about_dialog hbox vbox.col1
+{ padding-left:8px; padding-right:10px !important; width:170px !important; }
+.about_dialog hbox vbox label
+{ font-weight:bold !important; }
+.about_dialog hbox vbox description
+{ padding-bottom:5px !important; }
+.about_dialog hbox vbox description.link
+{ cursor:pointer !important; padding-bottom:20px !important; color:#069 !important;}
+.about_dialog hbox vbox description.link:hover
+{ text-decoration:underline !important }
+.about_dialog_wrapper .copyright
+{ padding-top:30px !important; padding-bottom:0px !important; margin-left:8px !important; color:#999 !important; font-size:90% !important; }

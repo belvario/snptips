@@ -1,0 +1,64 @@
+<!-- **********************************************************************************
+Project: SNPTIPS
+Purpose: Provide tasks to package the SNPTips addon.
+Author: Krishna M. Kanchinadam (kkanchinadam@5amsolutions.com)
+Date: 10/05/2010
+Required Properties:
+	snptips.binary.name - Name of the addon.
+	snptips.binary.version - Version.
+**************************************************************************************** -->
+
+<project name="snptips" default="snptips:echo_settings" basedir=".">
+    <description>Defines tasks to package the addon.</description>
+    <!-- ******************************************************************* -->
+    <!-- ** PROPERTIES                                                    ** -->
+    <!-- ******************************************************************* -->
+	<property name="local.properties.file" value="${basedir}/local.properties"/>
+	<property name="build.properties.file" value="${basedir}/build.properties"/>
+	<property file="${local.properties.file}"/>
+	<property file="${build.properties.file}"/>
+	<property name="snptips.binary.fullname" value="${snptips.binary.name}-v${snptips.binary.version}.xpi" />
+	<property name="output.dir" value="${basedir}/output/v${snptips.binary.version}"/>
+	<property name="output.exploded.dir" value="${output.dir}/${snptips.extension.id}"/>
+	<property name="snptips.binary.path" value="${output.dir}/${snptips.binary.fullname}"/>
+	<property name="firefox.extensions.path.local" value="${firefox.extensions.dir}/${snptips.extension.id}"/>
+	<property name="snptips.firefox.extension.id" value="${snptips.extension.id}" />
+
+  	<!-- ******************************************************************* -->
+    <!-- ** BUILD TARGETS                                                 ** -->
+    <!-- ******************************************************************* -->
+	<target name="snptips:echo_settings">
+		<echo message="Properties/Variable values set are...."/>
+		<echo message="basedir = ${basedir}"/>
+		<echo message="local.properties.file = ${local.properties.file}"/>
+		<echo message="build.properties.file = ${build.properties.file}"/>
+		<echo message="snptips.binary.name = ${snptips.binary.name}" />
+		<echo message="snptips.binary.version = ${snptips.binary.version}" />
+		<echo message="snptips.binary.fullname = ${snptips.binary.fullname}" />
+		<echo message="output.dir = ${output.dir}" />
+		<echo message="output.exploded.dir = ${output.exploded.dir}" />
+		<echo message="snptips.binary.path = ${snptips.binary.path}" />
+		<echo message="firefox.extensions.path.local = ${firefox.extensions.path.local}" />
+		<echo message="snptips.firefox.extension.id = ${snptips.firefox.extension.id}" />
+	</target>
+	<target name="snptips:clean">
+		<delete dir="${output.dir}"/>
+	</target>
+	<target name="snptips:package" depends="snptips:clean">
+		<mkdir dir="${output.dir}"/>
+		<zip destfile="${snptips.binary.path}" basedir="${basedir}" includes="install.rdf, chrome.manifest, LICENSE.txt, releasenotes.txt" >
+			<zipfileset dir="chrome" prefix="chrome"/>
+			<zipfileset dir="defaults" prefix="defaults"/>
+		</zip>
+		<unzip src="${snptips.binary.path}" dest="${output.exploded.dir}"/>
+	</target>
+	<target name="snptips:deploy" depends="snptips:package">
+		<delete includeEmptyDirs="true">
+			  <fileset includes="**/*" defaultexcludes="no" dir="${firefox.extensions.path.local}"/>
+		</delete>
+		<copy overwrite="true" todir="${firefox.extensions.path.local}">
+			  <fileset includes="**/*" defaultexcludes="no" dir="${output.exploded.dir}" />
+		</copy>
+	</target>
+</project>
+

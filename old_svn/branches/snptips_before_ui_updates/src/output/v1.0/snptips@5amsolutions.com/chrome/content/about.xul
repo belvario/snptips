@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://snptips/skin/snptips.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://snptips/locale/snptips.dtd">
+
+<dialog title="&labelAbout; &snptips.name;" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript" src="chrome://snptips/content/snptips.js"/>
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="snptips_properties" src="chrome://snptips/locale/snptips.properties" />
+    </stringbundleset>
+
+  <groupbox align="left" orient="horizontal">
+    <vbox>
+      <text value="&snptips.name;" style="font-weight: bold; font-size: x-large;"/>
+      <text value="&labelVersion; &snptips.version;"/>
+      <separator class="thin"/>
+      <text value="&labelCreatedBy;" style="font-weight: bold;"/>
+      <text value="&snptips.createdBy;"/>
+      <separator class="thin"/>
+      <text value="&labelHomepage;" style="font-weight: bold;"/>
+      <label id="homepage" class="link" onclick="window.open('&snptips.homepage;'); return true;">&snptips.homepage;</label>
+      <separator class="thin"/>
+    </vbox>
+  </groupbox>
+</dialog>

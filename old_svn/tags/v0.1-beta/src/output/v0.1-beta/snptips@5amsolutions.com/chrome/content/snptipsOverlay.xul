@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://snptips/skin/snptips.css" type="text/css"?>
+<!-- 
+// SNPTips(tm) by 5AM Solutions, Inc.
+// 
+// This work is licensed under the Creative Commons 
+// Attribution-ShareAlike 3.0 Unported License. To view a copy of 
+// this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+// or send a letter to Creative Commons, 171 Second Street, Suite 300, 
+// San Francisco, California, 94105, USA.
+// See LICENSE.txt for more information.
+-->
+<!DOCTYPE overlay SYSTEM "chrome://snptips/locale/snptips.dtd">
+<overlay id="snptips-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://snptips/content/prefutils.js"/>
+    <script type="application/x-javascript" src="chrome://snptips/content/snptips.js"/>
+    <script type="application/x-javascript" src="chrome://snptips/content/snptipsOverlay.js"/>
+    <script type="application/x-javascript" src="chrome://global/content/strres.js"/>
+
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="snptips_properties" src="chrome://snptips/locale/snptips.properties" />
+    </stringbundleset>
+
+    <!-- Firefox Tools menu -->
+    <menupopup id="menu_ToolsPopup">
+        <menu id="menu_snptips" class="menuitem-iconic" image="chrome://snptips/skin/snptips.png"
+            label="&snptips.name;" insertbefore="javascriptConsole">
+            <menupopup role="menu">
+                <menuitem label="&snptips.menu.toggle;" oncommand="snptips.onToggleSNPTips()" />
+                <menuseparator />
+                <menuitem label="&snptips.menu.preferences;" oncommand="openDialog('chrome://snptips/content/options.xul', 'preferencesDialog', 'centerscreen')" />
+                <menuseparator />
+                <menuitem label="&snptips.menu.website;" oncommand="snptips.onVisitWebsite('homeUrl')" />
+                <menuseparator />
+                <menuitem label="&snptips.menu.about;" oncommand="openDialog('chrome://snptips/content/about.xul', 'aboutDialog', 'centerscreen')" />
+                <menuseparator />
+            </menupopup>
+        </menu>
+    </menupopup>
+
+    <statusbar id="status-bar">
+        <statusbarpanel id="snptipsStatusBarPanel" class="statusbarpanel-menu-iconic"
+            image="chrome://snptips/skin/snptips.png"  tooltiptext="&snptips.statusBar.tooltip;" >
+            <menupopup position="before_start">
+                <menuitem label="&snptips.menu.toggle;" oncommand="snptips.onToggleSNPTips()" />
+                <menuseparator />
+                <menuitem label="&snptips.menu.preferences;" oncommand="openDialog('chrome://snptips/content/options.xul', 'preferencesDialog', 'centerscreen')" />
+                <menuseparator />
+                <menuitem label="&snptips.menu.website;" oncommand="snptips.onVisitWebsite('homeUrl')" />
+                <menuseparator />
+                <menuitem label="&snptips.menu.about;" oncommand="openDialog('chrome://snptips/content/about.xul', 'aboutDialog', 'centerscreen')" />
+                <menuseparator />
+            </menupopup>
+        </statusbarpanel>
+    </statusbar>
+</overlay>

@@ -1,0 +1,8 @@
+SNPTips by 5AM Solutions, Inc.
+
+1.0.2 Release Notes
+
+Known Issues - 
+
+- Emailing/forwarding web pages that contain SNP rs#'s may include genotype information under certain circumstances.  A fix for this that provides much better isolation of genotype information from web content is under development for 1.0.3, due shortly.  This is our highest-priority fix.  For now, we suggest avoiding emailing content containing rs#'s when SNPTips is enabled until this is addressed.
+- The close button on the popup balloon does not reposition correctly when the window is resized while the popup is showing

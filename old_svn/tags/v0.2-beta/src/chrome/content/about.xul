@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://snptips/skin/snptips.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://snptips/locale/snptips.dtd">
+<!--
+// SNPTips(tm) by 5AM Solutions, Inc.
+// 
+// This work is licensed under the Creative Commons 
+// Attribution-ShareAlike 3.0 Unported License. To view a copy of 
+// this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+// or send a letter to Creative Commons, 171 Second Street, Suite 300, 
+// San Francisco, California, 94105, USA.
+// See LICENSE.txt for more information.
+-->
+
+<window class="about_dialog_wrapper" id="about" title="&snptips.about;" autostretch="always" onload="sizeToContent()" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" >
+    <script type="application/x-javascript" src="chrome://snptips/content/snptips.js"/>
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="snptips_properties" src="chrome://snptips/locale/snptips.properties" />
+    </stringbundleset>
+
+    <vbox class="about_dialog">
+        <box class="logo_snptips">
+            <image src="chrome://snptips/skin/logo_snptips.png"/>
+        </box>
+        <description class="snptips_version" value="&snptips.name; &snptips.version;" />
+        <vbox class="about_vbox">
+            <hbox>
+                <vbox class="col1">
+                    <label value="&snptips.website.label;" />
+                    <description class="link" onclick="window.open('http://&snptips.website.value;'); return true;" value="&snptips.website.value;"/>
+                    <label value="&snptips.concept.label;" />
+                    <description value="&snptips.concept.value;" />
+                    <label value="&snptips.programming.label;" />
+                    <description value="&snptips.programming.value;" />
+                </vbox>
+                <vbox class="col2">
+                    <label value="&snptips.createdBy.label;"/>
+                    <description class="link" onclick="window.open('http://&snptips.5amsolutions.website;'); return true;" value="&snptips.5amsolutions.website;"/>
+                    <label value="&snptips.design.label;"/>
+                    <description value="&snptips.design.value;" />
+                    <label value="&snptips.wisdom.label;"/>
+                    <description value="&snptips.wisdom.value;" />
+                </vbox>
+            </hbox>
+        </vbox>
+        <description class="copyright" value="&snptips.copyright.value;" />
+        <box class="btn_close">
+            <image src="chrome://snptips/skin/btn_close.png" onclick="window.close();"/>
+        </box>
+    </vbox>
+</window>
+

@@ -1,0 +1,31 @@
+
+<!ENTITY labelAbout "About">
+<!ENTITY labelVersion "Version:">
+<!ENTITY labelCreatedBy "Created By:">
+<!ENTITY labelHomepage "Homepage:">
+
+<!ENTITY snptips.name "SNPTips">
+<!ENTITY snptips.version "v1.0:">
+<!ENTITY snptips.createdBy "5AM Solutions Inc.">
+<!ENTITY snptips.homepage "http://snptips.5amsolutions.com">
+
+<!ENTITY snptips.statusBar.tooltip "SNPTips by 5AM Solutions Inc.">
+<!ENTITY snptips.statusBar.status.enabled "Enabled">
+<!ENTITY snptips.statusBar.status.disabled "Disabled">
+
+<!ENTITY snptips.label "SNPTips">
+<!ENTITY snptips.menu.toggle "Toggle Status">
+<!ENTITY snptips.menu.preferences "Preferences">
+<!ENTITY snptips.menu.website "Homepage">
+<!ENTITY snptips.menu.documentation "Documentation">
+<!ENTITY snptips.menu.issues "Issues">
+<!ENTITY snptips.menu.about "About">
+
+<!ENTITY snptips.options.label "SNPTips Preferences">
+<!ENTITY snptips.options.tab.options "Options">
+<!ENTITY snptips.options.tab.about "About">
+<!ENTITY snptips.options.tab.enableSnpTips "Enable SNPTips">
+<!ENTITY snptips.options.tab.enableDisableSnpTips "Enable/Disable SNPTips">
+<!ENTITY snptips.options.tab.dataFile "Data File:">
+<!ENTITY snptips.options.tab.selectDataFile "Select a Data File">
+<!ENTITY snptips.options.tab.btnBrowse "Browse...">

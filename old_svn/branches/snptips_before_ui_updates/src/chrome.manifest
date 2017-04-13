@@ -1,0 +1,8 @@
+content   snptips                 chrome/content/
+content   snptips                 chrome/content/ contentaccessible=yes
+skin      snptips   classic/1.0   chrome/skin/
+locale    snptips   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://snptips/content/snptipsOverlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://snptips/skin/snptips.css
